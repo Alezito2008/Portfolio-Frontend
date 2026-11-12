@@ -1,0 +1,11 @@
+<svg width="222" height="222" viewBox="0 0 222 222" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="222" height="222" fill="#1E1E1E"/>
+<rect width="222" height="222" fill="url(#pattern0_47_46)"/>
+<defs>
+<pattern id="pattern0_47_46" patternUnits="userSpaceOnUse" patternTransform="matrix(222.003 0 0 222.003 -1.1878e-05 0)" preserveAspectRatio="none" viewBox="-1.26362e-05 0 236.174 236.174" width="1" height="1">
+<g id="pattern0_47_46_inner">
+<rect x="118.087" width="167" height="167" transform="rotate(45 118.087 0)" fill="#181818"/>
+<rect x="118.087" y="4.24264" width="161" height="161" transform="rotate(45 118.087 4.24264)" stroke="white" stroke-opacity="0.08" stroke-width="6"/>
+</g>
+</pattern></defs>
+</svg>

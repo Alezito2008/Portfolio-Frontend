@@ -1,0 +1,163 @@
+<section class="hero-section">
+    <img src="assets/bug.png" alt="" style="
+        position: absolute;
+        top: -200px;
+        rotate: 325deg;
+        z-index: 1;
+    ">
+    <img src="assets/disco.png" alt="" class="interactable-spin" style="
+        position: absolute;
+        top: -60px;
+        left: -60px;
+        width: 280px;
+    " id="img-disco">
+    <img src="assets/yogurt.png" alt="" class="interactable-spin" style="
+        position: absolute;
+        bottom: -60px;
+        left: -60px;
+        width: 280px;
+    " id="img-yogurt">
+    <img src="assets/mouse.png" alt="" style="
+        position: absolute;
+        top: 50%;
+        right: -100px;
+        width: 250px;
+        rotate: -15deg;
+    " id="img-mouse">
+    <img src="assets/teclado.png" alt="" style="
+        position: absolute;
+        top: -150px;
+        right: -100px;
+        width: 400px;
+        transform-origin: center left;
+        rotate: 30deg;
+    " id="img-teclado">
+    <div class="hero-content">
+        <div class="hero-title-container">
+            <h1 class="hero-title text-glow">¡Hola!</h1>
+            <img src="assets/mano.png"  alt="" class="hero-hand-emoji">
+        </div>
+        <h2 class="hero-subtitle">Soy Alezito</h2>
+        <div class="dev-chip">DEV</div>
+        <a href="#proyectos" class="btn-explorar">EXPLORAR_</a>
+    </div>
+</section>
+
+<script>
+    const handEmoji = document.querySelector('.hero-hand-emoji') as HTMLImageElement;
+    handEmoji.addEventListener('mouseenter', () => {
+        handEmoji.style.animation = 'wave 1s ease-in-out';
+        handEmoji.addEventListener('animationend', () => {
+            handEmoji.style.animation = '';
+        }, { once: true });
+    });
+</script>
+
+<style>
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+    }
+
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        background-color: #1E1E1E;
+        background-image: url('assets/hero-grid-background-tile.svg');
+        background-size: 50px;
+        font-family: 'Jersey 10', sans-serif;
+
+        color: #fff;
+    }
+
+    .hero-section > img {
+        filter: drop-shadow(0 0 15px rgb(255, 255, 255, 0.15))
+    }
+
+    .hero-title-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 10rem;
+        line-height: 1;
+        margin: 0;
+        color: var(--neon-green);
+        text-shadow: 
+            10px 10px 0 var(--neon-green-dark),
+            var(--green-glow-shadow);
+    }
+
+    .hero-hand-emoji {
+        height: 10rem;
+        filter: var(--orange-glow-filter);
+    }
+
+    .hero-subtitle {
+        font-size: 8rem;
+        margin: 0;
+        text-shadow: 10px 10px 0 var(--neon-green-dark), var(--white-glow-shadow);
+        margin-left: 10rem;
+    }
+
+    .dev-chip {
+        display: inline-block;
+        padding-inline: 1.5rem;
+        margin-left: auto;
+        margin-top: 2rem;
+        margin-right: 4rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--neon-green-light);
+        background-color: var(--neon-green-dark);
+        box-shadow: 8px 8px var(--neon-green-darker);
+    }
+
+    .btn-explorar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        align-self: center;
+        padding: 0.5rem 3rem;
+        margin-top: 2rem;
+        color: var(--neon-green-darker);
+        background-color: var(--neon-green);
+        text-decoration: none;
+        font-size: 3rem;
+        box-shadow: 8px 8px var(--neon-green-dark), var(--green-glow-shadow);
+        transition:
+            box-shadow 0.3s ease-in-out,
+            background-color 0.3s ease-in-out,
+            color 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
+    }
+
+    .btn-explorar:hover {
+        box-shadow: var(--green-glow-shadow);
+        transform: translate(8px, 8px);
+        /* color: var(--neon-green-light); */
+        /* background-color: var(--neon-green-dark); */
+    }
+
+    @keyframes wave {
+        0% { transform: rotate(0deg); }
+        15% { transform: rotate(14deg); }
+        30% { transform: rotate(-8deg); }
+        40% { transform: rotate(14deg); }
+        50% { transform: rotate(-4deg); }
+        60% { transform: rotate(10deg); }
+        70% { transform: rotate(0deg); }
+        100% { transform: rotate(0deg); }
+    }
+</style>

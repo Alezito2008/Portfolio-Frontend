@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Jersey 10';
+    src: url('fonts/Jersey10-Regular.ttf');
+}
+
+:root {
+    --neon-green: #34FF45;
+    --neon-green-light: #81FF8C;
+    --neon-green-dark: #17621D;
+    --neon-green-darker: #103213;
+    --green-glow: #4cda588d;
+    --orange-glow: #c97d1365;
+
+    --green-glow-shadow:
+        0 0 10px var(--green-glow),
+        0 0 25px var(--green-glow),
+        0 0 45px var(--green-glow);
+    --white-glow-shadow:
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 25px rgba(255, 255, 255, 0.2),
+        0 0 45px rgba(255, 255, 255, 0.2);
+    --orange-glow-shadow:
+        0 0 10px var(--orange-glow),
+        0 0 25px var(--orange-glow),
+        0 0 45px var(--orange-glow);
+
+    --orange-glow-filter: 
+        drop-shadow(0 0 10px var(--orange-glow)) 
+        drop-shadow(0 0 25px var(--orange-glow)) 
+        drop-shadow(0 0 45px var(--orange-glow));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jersey 10', sans-serif;
+
+    background-image: url('assets/green-grid-background-tile.svg');
+    background-size: 25px;
+    background-repeat: repeat;
+}
+
+.is-spinning {
+    animation: spin 0.5s ease-out;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
