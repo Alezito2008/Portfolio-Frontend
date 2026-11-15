@@ -10,6 +10,8 @@
     --neon-green-darker: #103213;
     --green-glow: #4cda588d;
     --orange-glow: #c97d1365;
+    --dark-blue: #082a3a;
+    --cream: #EFDEC6;
 
     --green-glow-shadow:
         0 0 10px var(--green-glow),
@@ -44,14 +46,101 @@ body {
     background-repeat: repeat;
 }
 
-.is-spinning {
-    animation: spin 0.5s ease-out;
+*::selection {
+    background-color: var(--neon-green);
+    color: var(--dark-blue);
 }
 
-@keyframes spin {
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Jersey 10', sans-serif;
+}
+
+.from-top-left {
+    animation: from-top-left 0.5s ease-out;
+}
+
+@keyframes from-top-left {
     from {
-        transform: rotate(0deg);
+        transform: translate(-100%, -100%);
+        opacity: 0;
     } to {
-        transform: rotate(360deg);
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.from-bottom-left {
+    animation: from-bottom-left 0.5s ease-out;
+}
+
+@keyframes from-bottom-left {
+    from {
+        transform: translate(-100%, 100%);
+        opacity: 0;
+    } to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.from-top-right {
+    animation: from-top-right 0.5s ease-out;
+}
+
+@keyframes from-top-right {
+    from {
+        transform: translate(100%, -100%);
+        opacity: 0;
+    } to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.from-bottom-right {
+    animation: from-bottom-right 0.5s ease-out;
+}
+
+@keyframes from-bottom-right {
+    from {
+        transform: translate(100%, 100%);
+        opacity: 0;
+    } to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.from-top {
+    animation: from-top 0.5s ease-out;
+}
+
+@keyframes from-top {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.from-bottom {
+    animation: from-bottom 0.5s ease-out;
+}
+
+@keyframes from-bottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

@@ -1,0 +1,75 @@
+---
+interface Props {
+    id: string;
+    title: string;
+    icon?: string;
+    align?: 'left' | 'right';
+}
+
+const { id, title, icon, align = 'left' } = Astro.props;
+---
+
+<section class="section" id={id}>
+    <div class={`section-card section-card--${align}`}>
+        <slot name="decoration" />
+        <header class="section-header">
+            {icon && <img src={icon} alt="" class="section-icon" />}
+            <h2 class="section-title">{title}</h2>
+        </header>
+        <slot />
+    </div>
+</section>
+
+<style>
+    .section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: 'Jersey 10', sans-serif;
+    }
+
+    .section-card {
+        position: relative;
+        width: 85%;
+        background-color: var(--cream);
+        padding: 2rem 3rem;
+        box-sizing: border-box;
+    }
+
+    .section-card--left {
+        border-radius: 0 50px 50px 0;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .section-card--right {
+        border-radius: 50px 0 0 50px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .section-title {
+        font-size: 3.25rem;
+        color: var(--dark-blue);
+        text-decoration: underline;
+        text-shadow: 6px 6px rgba(0, 0, 0, 0.1);
+        line-height: 1;
+        margin: 0;
+    }
+
+    .section-icon {
+        filter: drop-shadow(6px 6px rgba(0, 0, 0, 0.1));
+        height: 5rem;
+    }
+</style>

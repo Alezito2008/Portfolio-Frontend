@@ -1,0 +1,118 @@
+<section class="section about-section" id="sobre-mi">
+    <div class="about-card">
+        <img src="assets/mancuerna.svg" alt="" class="img-mancuerna">
+        <header class="about-header">
+            <img src="assets/user-icon.svg" alt="" class="user-icon">
+            <h2 class="about-title">Sobre Mí</h2>
+        </header>
+
+        <p class="about-text">
+            ¡Hola! Soy Alezito, estudiante enfocado en el desarrollo web y en la
+            creación de experiencias digitales funcionales y atractivas. Me
+            fascina el proceso de transformar ideas abstractas en código
+            estructurado y ver cómo cobran vida en la pantalla.
+        </p>
+
+        <div class="about-middle-row">
+            <div class="sarten-container">
+                <img 
+                src="assets/sarten.svg" 
+                alt="Sartén con huevos fritos" 
+                class="img-sarten" 
+                />
+            </div>
+
+            <p class="about-text">
+                Fuera del editor de código, divido mi tiempo entre el gimnasio y la
+                cocina. En el gym aprendí que la constancia y la disciplina diaria
+                vencen a cualquier obstáculo, una mentalidad que aplico directamente
+                al momento de depurar errores y aprender nuevas tecnologías. Por otro
+                lado, la cocina es mi espacio de creatividad y precisión: seguir una
+                receta o experimentar con nuevos ingredientes requiere el mismo nivel
+                de orden y lógica que estructurar una buena arquitectura de
+                software.
+            </p>
+        </div>
+        <p class="about-text">
+            Actualmente, estoy enfocado en seguir fortaleciendo mis habilidades de
+            programación, colaborar en proyectos desafiantes y construir soluciones
+            que marquen la diferencia.
+        </p>
+    </div>
+</section>
+
+<style>
+    .about-section {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 6rem 0;
+        color: var(--neon-green-darker);
+    }
+
+    .about-card {
+        position: relative;
+        width: 85%;
+        background-color: var(--cream);
+        border-radius: 0 50px 50px 0;
+        padding: 2rem 3rem;
+        box-sizing: border-box;
+    }
+
+    .img-mancuerna {
+        position: absolute;
+        top: -20px;
+        right: -75px;
+        width: 250px;
+        transform: rotate(45deg);
+        filter: drop-shadow(20px -30px 0 rgba(0, 0, 0, 0.25));
+    }
+
+    .about-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .about-title {
+        font-size: 3.25rem;
+        color: var(--dark-blue);
+        text-decoration: underline;
+        text-shadow: 6px 6px rgba(0, 0, 0, 0.1);
+        line-height: 1;
+        margin: 0;
+    }
+
+    .user-icon {
+        filter: drop-shadow(6px 6px rgba(0, 0, 0, 0.1));
+        height: 5rem;
+    }
+
+    .about-text {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        margin-top: 2rem;
+        text-align: justify;
+        margin-bottom: 0;
+    }
+
+    .about-middle-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sarten-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 3rem 10rem 3rem 10rem;
+        filter: drop-shadow(20px -5px rgba(0, 0, 0, 0.25));
+    }
+
+    .img-sarten {
+        width: 250px;
+    }
+</style>

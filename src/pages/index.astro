@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Hero from '../components/Hero.astro';
+import AboutMe from '../components/AboutMe.astro';
 import Projects from '../components/Projects.astro';
 ---
 
@@ -15,17 +16,28 @@ import Projects from '../components/Projects.astro';
 	</head>
 	<body>
 		<Hero />
+		<AboutMe />
 		<Projects />
 		<script>
-			const spinElements = document.querySelectorAll('.interactable-spin');
+			const spinElements = document.querySelectorAll<HTMLElement>('.interactable-spin');
 			spinElements.forEach((el) => {
 				el.addEventListener('mouseenter', () => {
-					if (el.classList.contains('is-spinning')) return;
+					if (el.dataset.spinning === 'true') return;
 
-					el.classList.add('is-spinning');
-					el.addEventListener('animationend', () => {
-						el.classList.remove('is-spinning');
-					}, { once: true });
+					el.dataset.spinning = 'true';
+					el.animate(
+						[
+							{ transform: 'rotate(0deg)' },
+							{ transform: 'rotate(360deg)' },
+						],
+						{
+							duration: 500,
+							easing: 'ease-in-out',
+						}
+					);
+					setTimeout(() => {
+						el.dataset.spinning = 'false';
+					}, 500);
 				});
 			});
 		</script>
