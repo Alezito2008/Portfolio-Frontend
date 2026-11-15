@@ -1,0 +1,98 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    contentSide?: "left" | "right";
+}
+
+const { title, description, image, link, contentSide = 'left' } = Astro.props;
+---
+<article class={`project-card ${contentSide === 'left' ? 'left' : 'right'}`}>
+    <div class="contenido">
+        <header>
+            <h3 class="project-title">{title}</h3>
+        </header>
+        <p class="body-text">{description}</p>
+        <a href={link} class="btn-visitar" target="_blank" rel="noopener noreferrer">
+            <div class="btn-text">Ver Proyecto</div> <div class="triangle" />
+        </a>
+    </div>
+    <div class="imagen">
+        <img src={image} alt={`Imágen de ${title}`} />
+    </div>
+</article>
+
+<style>
+    .project-card {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 5rem;
+        color: var(--neon-green-darker);
+    }
+
+    .project-card.left {
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: "contenido imagen";
+    }
+
+    .project-card.right {
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas: "imagen contenido";
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+        text-decoration: underline;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .body-text {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        text-align: justify;
+    }
+
+    .btn-visitar {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--orange);
+        color: var(--dark-blue);
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: #fff;
+        box-shadow: 6px 6px var(--orange-dark);
+    }
+
+    .triangle {
+        border: solid transparent;
+        border-width: 0.45rem 0 0.45rem 0.5rem;
+        border-left-color: #fff;
+        display: inline-block;
+    }
+
+    .contenido {
+        grid-area: contenido;
+    }
+
+    .imagen {
+        grid-area: imagen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 6px 6px rgb(0, 0, 0, 0.25);
+    }
+
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+</style>

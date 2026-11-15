@@ -1,15 +1,31 @@
 ---
 import SectionCard from "./SectionCard.astro";
+import ProjectCard from "./ProjectCard.astro";
 ---
 
 <SectionCard title="Mis Proyectos" id="proyectos" icon="assets/cmd.png" align="right">
-    <p>Hola</p>
+    <div class="projects-container">
+        <ProjectCard
+            title="HydroEngine"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            image="assets/HydroEngine.svg"
+            link="https://github.com/alezito2008/HydroEngine"
+            contentSide="left"
+        />
+        <ProjectCard
+            title="HydroEngine"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            image="assets/HydroEngine.svg"
+            link="https://github.com/alezito2008/HydroEngine"
+            contentSide="right"
+        />
+    </div>
 </SectionCard>
 
 <style>
-    .projects-content {
+    .projects-container {
         display: flex;
         flex-direction: column;
-        z-index: 2;
-    }   
+        gap: 5rem;
+    }
 </style>
