@@ -1,10 +1,11 @@
-<section class="section about-section" id="sobre-mi">
-    <div class="about-card">
+---
+import SectionCard from './SectionCard.astro';
+---
+
+<SectionCard id="sobre-mi" title="Sobre Mí" icon="assets/user-icon.svg">
+    <div slot="decoration">
         <img src="assets/mancuerna.svg" alt="" class="img-mancuerna">
-        <header class="about-header">
-            <img src="assets/user-icon.svg" alt="" class="user-icon">
-            <h2 class="about-title">Sobre Mí</h2>
-        </header>
+    </div>
 
         <p class="about-text">
             ¡Hola! Soy Alezito, estudiante enfocado en el desarrollo web y en la
@@ -38,25 +39,11 @@
             programación, colaborar en proyectos desafiantes y construir soluciones
             que marquen la diferencia.
         </p>
-    </div>
-</section>
+</SectionCard>
 
 <style>
-    .about-section {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        padding: 6rem 0;
-        color: var(--neon-green-darker);
-    }
-
-    .about-card {
-        position: relative;
-        width: 85%;
-        background-color: var(--cream);
-        border-radius: 0 50px 50px 0;
-        padding: 2rem 3rem;
-        box-sizing: border-box;
+    :global(#sobre-mi) {
+        margin-top: 5rem;
     }
 
     .img-mancuerna {
@@ -66,28 +53,6 @@
         width: 250px;
         transform: rotate(45deg);
         filter: drop-shadow(20px -30px 0 rgba(0, 0, 0, 0.25));
-    }
-
-    .about-header {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
-    }
-
-    .about-title {
-        font-size: 3.25rem;
-        color: var(--dark-blue);
-        text-decoration: underline;
-        text-shadow: 6px 6px rgba(0, 0, 0, 0.1);
-        line-height: 1;
-        margin: 0;
-    }
-
-    .user-icon {
-        filter: drop-shadow(6px 6px rgba(0, 0, 0, 0.1));
-        height: 5rem;
     }
 
     .about-text {

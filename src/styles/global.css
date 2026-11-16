@@ -46,6 +46,10 @@ body {
     background-image: url('assets/green-grid-background-tile.svg');
     background-size: 25px;
     background-repeat: repeat;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 *::selection {

@@ -1,0 +1,35 @@
+---
+export interface Props {
+    skill: string;
+}
+
+const { skill } = Astro.props;
+---
+<div class="skill-chip">{skill}</div>
+
+<style>
+    .skill-chip {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        background-color: var(--orange);
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        box-shadow: 6px 6px var(--orange-dark);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-chip:hover {
+        transform: translate(6px, 6px);
+        box-shadow: unset;
+    }
+
+    .skill-chip::before {
+        content: '';
+        /* triangle border */
+        border: solid transparent;
+        border-width: 0.45rem 0 0.45rem 0.5rem;
+        border-left-color: #fff;
+    }
+</style>
