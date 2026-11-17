@@ -4,34 +4,39 @@ import SkillChip from "./SkillChip.astro";
 ---
 
 <SectionCard title="Habilidades & Tecnologías" id="habilidades" icon="assets/herramientas.png" align="left">
-    <div class="skills-container">
-
-        <div class="skills-content">
-            <h3 class="skill-title">Tecnologías</h3>
-            <div class="skills-container">
-                <SkillChip skill="CSS" />
-                <SkillChip skill="JavaScript" />
-                <SkillChip skill="TypeScript" />
-                <SkillChip skill="React" />
-                <SkillChip skill="Next.js" />
-                <SkillChip skill="Astro" />
-                <SkillChip skill="Node.js" />
-                <SkillChip skill="Express.js" />
-                <SkillChip skill="MongoDB" />
-                <SkillChip skill="MySQL" />
-            </div>
-            <h3 class="skill-title">Herramientas</h3>
-            <div class="skills-container">
-                <SkillChip skill="Git" />
-                <SkillChip skill="GitHub" />
-                <SkillChip skill="Vite" />
-                <SkillChip skill="Figma" />
-                <SkillChip skill="Postman" />
-                <SkillChip skill="Visual Studio Code" />
-            </div>
+    <div class="skills-media" slot="decoration">
+        <img src="assets/computadora.png" alt="Computadora" />
+    </div>
+    <div class="skills-content">
+        <h3 class="skill-title">Tecnologías</h3>
+        <div class="skills-list-container">
+            <SkillChip skill="CSS" />
+            <SkillChip skill="JavaScript" />
+            <SkillChip skill="TypeScript" />
+            <SkillChip skill="React" />
+            <SkillChip skill="Next.js" />
+            <SkillChip skill="Astro" />
+            <SkillChip skill="Node.js" />
+            <SkillChip skill="Express.js" />
+            <SkillChip skill="Rust" />
+            <SkillChip skill="C" />
+            <SkillChip skill="C++" />
+            <SkillChip skill="C#" />
+            <SkillChip skill="Java" />
+            <SkillChip skill="Kotlin" />
+            <SkillChip skill="Dart" />
+            <SkillChip skill="MongoDB" />
+            <SkillChip skill="MySQL" />
+            <SkillChip skill="PostgreSQL" />
         </div>
-        <div class="skills-media">
-            <img src="assets/computadora.png" alt="Computadora" />
+        <h3 class="skill-title">Herramientas</h3>
+        <div class="skills-list-container">
+            <SkillChip skill="Git" />
+            <SkillChip skill="GitHub" />
+            <SkillChip skill="Vite" />
+            <SkillChip skill="Figma" />
+            <SkillChip skill="Postman" />
+            <SkillChip skill="Visual Studio Code" />
         </div>
     </div>
 </SectionCard>
@@ -47,11 +52,24 @@ import SkillChip from "./SkillChip.astro";
         font-size: 2.5rem;
     }
 
-    .skills-container {
+    .skills-list-container {
         display: flex;
         flex-wrap: wrap;
         gap: .25rem;
+        row-gap: .5rem;
         margin-bottom: 2rem;
         max-width: 800px;
+    }
+
+    .skills-media {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        overflow: hidden;
+    }
+
+    .skills-media img {
+        max-width: 300px;
     }
 </style>
