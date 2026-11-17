@@ -1,0 +1,55 @@
+---
+import ContactCard from "./ContactCard.astro";
+---
+
+<section class="section-contacto section" id="contacto">
+    <h2 class="contacto-title">Contacto</h2>
+    <div class="contacto-content">
+        <h3>Podés contactarme mediante</h3>
+        <div class="contact-cards-container">
+            <ContactCard title="@alezito2008" image="assets/instagram.png" url="https://www.instagram.com/alezito2008/" />
+            <ContactCard title="alejandro.kretzig@gmail.com" image="assets/gmail.png" url="mailto:alejandro.kretzig@gmail.com" />
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-contacto {
+        background-color: #1E1E1E;
+        background-image: url("assets/black-grid-background-tile.svg");
+        background-size: 25px;
+        color:#fff;
+        position: relative;
+
+        padding: 3rem;
+        box-sizing: border-box;
+    }
+
+    .section-contacto::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background-color: var(--neon-green);
+        box-shadow: 0 0 10px var(--neon-green), 0 0 15px var(--neon-green);
+    }
+
+    .contacto-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .contact-cards-container {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>

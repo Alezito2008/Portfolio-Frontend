@@ -1,0 +1,49 @@
+---
+export interface Props {
+    image: string;
+    title: string;
+    url: string;
+}
+
+const { image, title, url } = Astro.props;
+---
+<a class="contact-card" href={url} target="_blank" rel="noopener noreferrer">
+    <div class="contact-media">
+        <img src={image} alt={title}>
+    </div>
+    <div class="contact-title-container">
+        <h3 class="contact-title">{title}</h3>
+    </div>
+</a>
+
+<style>
+    .contact-card {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        gap: 1rem;
+        backdrop-filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        width: 100%;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .contact-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+</style>
