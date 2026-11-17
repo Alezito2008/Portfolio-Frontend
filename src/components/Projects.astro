@@ -7,17 +7,24 @@ import ProjectCard from "./ProjectCard.astro";
     <div class="projects-container">
         <ProjectCard
             title="HydroEngine"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+            description="Motor de videojuegos 2D/3D desarrollado desde cero en C++ y OpenGL como proyecto escolar para profundizar en arquitectura de software, renderizado gráfico en tiempo real y gestión de memoria a bajo nivel."
             image="assets/HydroEngine.svg"
             link="https://github.com/alezito2008/HydroEngine"
             contentSide="left"
         />
         <ProjectCard
-            title="HydroEngine"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            image="assets/HydroEngine.svg"
-            link="https://github.com/alezito2008/HydroEngine"
+            title="TraidX"
+            description="Aplicación móvil de finanzas personales e inversiones potenciada por Inteligencia Artificial Explicable (XAI). Analiza el mercado y sugiere estrategias de inversión detallando el porqué de cada recomendación para ofrecer total transparencia al usuario."
+            image="assets/TraidX.png"
+            link="https://github.com/UriGandel/TraidX"
             contentSide="right"
+        />
+        <ProjectCard
+            title="ListApp"
+            description="Aplicación web de gestión de tareas y listas de compras con sincronización instantánea. Implementa WebSockets para permitir que múltiples usuarios editen, marquen y compartan listas de forma colaborativa en tiempo real."
+            image="assets/ListApp.png"
+            link="https://github.com/alezito2008/ListApp"
+            contentSide="left"
         />
     </div>
 </SectionCard>
@@ -26,6 +33,6 @@ import ProjectCard from "./ProjectCard.astro";
     .projects-container {
         display: flex;
         flex-direction: column;
-        gap: 5rem;
+        gap: 1rem;
     }
 </style>

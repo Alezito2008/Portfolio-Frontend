@@ -6,7 +6,7 @@ import SectionCard from './SectionCard.astro';
     <div slot="decoration">
         <img src="assets/mancuerna.svg" alt="" class="img-mancuerna">
     </div>
-
+    <div class="content">
         <p class="about-text">
             ¡Hola! Soy Alezito, estudiante enfocado en el desarrollo web y en la
             creación de experiencias digitales funcionales y atractivas. Me
@@ -39,11 +39,19 @@ import SectionCard from './SectionCard.astro';
             programación, colaborar en proyectos desafiantes y construir soluciones
             que marquen la diferencia.
         </p>
+    </div>
 </SectionCard>
 
 <style>
     :global(#sobre-mi) {
         margin-top: 5rem;
+    }
+
+    .content {
+        background-color: rgba(187, 113, 56, 0.1);
+        padding: 0 2rem;
+        border: 2px solid rgba(165, 128, 101, 0.3);
+        border-radius: 25px;
     }
 
     .img-mancuerna {
@@ -61,6 +69,10 @@ import SectionCard from './SectionCard.astro';
         margin-top: 2rem;
         text-align: justify;
         margin-bottom: 0;
+    }
+
+    .content > .about-text:last-child {
+        margin-bottom: 1rem;
     }
 
     .about-middle-row {

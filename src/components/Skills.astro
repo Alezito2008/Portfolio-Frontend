@@ -4,5 +4,54 @@ import SkillChip from "./SkillChip.astro";
 ---
 
 <SectionCard title="Habilidades & Tecnologías" id="habilidades" icon="assets/herramientas.png" align="left">
-    <SkillChip skill="HTML" />
+    <div class="skills-container">
+
+        <div class="skills-content">
+            <h3 class="skill-title">Tecnologías</h3>
+            <div class="skills-container">
+                <SkillChip skill="CSS" />
+                <SkillChip skill="JavaScript" />
+                <SkillChip skill="TypeScript" />
+                <SkillChip skill="React" />
+                <SkillChip skill="Next.js" />
+                <SkillChip skill="Astro" />
+                <SkillChip skill="Node.js" />
+                <SkillChip skill="Express.js" />
+                <SkillChip skill="MongoDB" />
+                <SkillChip skill="MySQL" />
+            </div>
+            <h3 class="skill-title">Herramientas</h3>
+            <div class="skills-container">
+                <SkillChip skill="Git" />
+                <SkillChip skill="GitHub" />
+                <SkillChip skill="Vite" />
+                <SkillChip skill="Figma" />
+                <SkillChip skill="Postman" />
+                <SkillChip skill="Visual Studio Code" />
+            </div>
+        </div>
+        <div class="skills-media">
+            <img src="assets/computadora.png" alt="Computadora" />
+        </div>
+    </div>
 </SectionCard>
+
+<style>
+    .skills-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .skill-title {
+        color: var(--dark-blue);
+        font-size: 2.5rem;
+    }
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .25rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+</style>

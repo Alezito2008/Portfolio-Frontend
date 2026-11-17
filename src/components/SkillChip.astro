@@ -9,27 +9,54 @@ const { skill } = Astro.props;
 
 <style>
     .skill-chip {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        margin: 0.5rem;
-        background-color: var(--orange);
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: bold;
-        box-shadow: 6px 6px var(--orange-dark);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
+        --pico: 12px;
+        --forma: polygon(
+            var(--pico) 0%,
+            calc(100% - var(--pico)) 0%,
+            100% 50%,
+            calc(100% - var(--pico)) 100%,
+            var(--pico) 100%,
+            0% 50%
+        );
 
-    .skill-chip:hover {
-        transform: translate(6px, 6px);
-        box-shadow: unset;
+        min-width: 100px;
+        display: inline-flex;
+        position: relative;
+        justify-content: center;
+        z-index: 1;
+        padding: 6px calc(var(--pico) + 4px);
+        color: #91420A;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: transform 0.2s;
     }
 
     .skill-chip::before {
-        content: '';
-        /* triangle border */
-        border: solid transparent;
-        border-width: 0.45rem 0 0.45rem 0.5rem;
-        border-left-color: #fff;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #F5B877;
+        clip-path: var(--forma);
+        z-index: -1;
+    }
+
+    .skill-chip::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--orange-dark);
+        clip-path: var(--forma);
+        transform: translate(3px, 4px);
+        z-index: -2;
+        transition: transform 0.2s;
+        opacity: 0.5;
+    }
+
+    .skill-chip:hover {
+        transform: translate(3px, 4px);
+    }
+
+    .skill-chip:hover::after {
+        transform: translate(0, 0);
     }
 </style>
