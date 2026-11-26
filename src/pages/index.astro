@@ -5,18 +5,19 @@ import AboutMe from '../components/AboutMe.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
+import { getPublicAssetUrl } from '../utils/assets';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href={getPublicAssetUrl('favicon.svg')} />
+		<link rel="icon" href={getPublicAssetUrl('favicon.ico')} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
+	<body style={`--body-background: url("${getPublicAssetUrl('assets/green-grid-background-tile.svg')}")`}>
 		<Hero />
 		<AboutMe />
 		<Projects />

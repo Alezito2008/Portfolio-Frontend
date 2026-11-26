@@ -1,11 +1,12 @@
 ---
 import SectionCard from "./SectionCard.astro";
 import SkillChip from "./SkillChip.astro";
+import { getPublicAssetUrl } from '../utils/assets';
 ---
 
-<SectionCard title="Habilidades & Tecnologías" id="habilidades" icon="assets/herramientas.png" align="left">
+<SectionCard title="Habilidades & Tecnologías" id="habilidades" icon={getPublicAssetUrl('assets/herramientas.png')} align="left">
     <div class="skills-media" slot="decoration">
-        <img src="assets/computadora.png" alt="Computadora" />
+        <img src={getPublicAssetUrl('assets/computadora.png')} alt="Computadora" />
     </div>
     <div class="skills-content">
         <h3 class="skill-title">Tecnologías</h3>
