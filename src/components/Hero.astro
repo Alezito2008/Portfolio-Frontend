@@ -1,30 +1,34 @@
-<section class="section hero-section">
-    <img src="assets/bug.png" alt="" style="
+---
+import { getPublicAssetUrl } from '../utils/assets';
+---
+
+<section class="section hero-section" style={`--hero-background: url("${getPublicAssetUrl('assets/hero-grid-background-tile.svg')}")`}>
+    <img src={getPublicAssetUrl('assets/bug.png')} alt="" style="
         position: absolute;
         top: -200px;
         rotate: 325deg;
         z-index: 1;
     ">
-    <img src="assets/disco.png" alt="" class="interactable-spin from-top-left" style="
+    <img src={getPublicAssetUrl('assets/disco.png')} alt="" class="interactable-spin from-top-left" style="
         position: absolute;
         top: -60px;
         left: -60px;
         width: 280px;
     " id="img-disco">
-    <img src="assets/yogurt.png" alt="" class="interactable-spin from-bottom-left" style="
+    <img src={getPublicAssetUrl('assets/yogurt.png')} alt="" class="interactable-spin from-bottom-left" style="
         position: absolute;
         bottom: -60px;
         left: -60px;
         width: 280px;
     " id="img-yogurt">
-    <img src="assets/mouse.png" alt="" class="from-bottom-right" style="
+    <img src={getPublicAssetUrl('assets/mouse.png')} alt="" class="from-bottom-right" style="
         position: absolute;
         top: 50%;
         right: -100px;
         width: 250px;
         rotate: -15deg;
     " id="img-mouse">
-    <img src="assets/teclado.png" class="from-top-right" alt="" style="
+    <img src={getPublicAssetUrl('assets/teclado.png')} class="from-top-right" alt="" style="
         position: absolute;
         top: -150px;
         right: -100px;
@@ -35,7 +39,7 @@
     <div class="hero-content from-top">
         <div class="hero-title-container">
             <h1 class="hero-title text-glow">¡Hola!</h1>
-            <img src="assets/mano.png"  alt="" class="hero-hand-emoji">
+            <img src={getPublicAssetUrl('assets/mano.png')} alt="" class="hero-hand-emoji">
         </div>
         <h2 class="hero-subtitle">Soy Alezito</h2>
         <div class="dev-chip">DEV</div>
@@ -66,7 +70,7 @@
         align-items: center;
 
         background-color: #1E1E1E;
-        background-image: url('assets/hero-grid-background-tile.svg');
+        background-image: var(--hero-background);
         background-size: 50px;
         color: #fff;
     }

@@ -1,10 +1,11 @@
 ---
 import SectionCard from './SectionCard.astro';
+import { getPublicAssetUrl } from '../utils/assets';
 ---
 
-<SectionCard id="sobre-mi" title="Sobre Mí" icon="assets/user-icon.svg">
+<SectionCard id="sobre-mi" title="Sobre Mí" icon={getPublicAssetUrl('assets/user-icon.svg')}>
     <div slot="decoration">
-        <img src="assets/mancuerna.svg" alt="" class="img-mancuerna">
+        <img src={getPublicAssetUrl('assets/mancuerna.svg')} alt="" class="img-mancuerna">
     </div>
     <div class="content">
         <p class="about-text">
@@ -17,7 +18,7 @@ import SectionCard from './SectionCard.astro';
         <div class="about-middle-row">
             <div class="sarten-container">
                 <img 
-                src="assets/sarten.svg" 
+                src={getPublicAssetUrl('assets/sarten.svg')}
                 alt="Sartén con huevos fritos" 
                 class="img-sarten" 
                 />

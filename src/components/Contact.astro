@@ -1,14 +1,15 @@
 ---
 import ContactCard from "./ContactCard.astro";
+import { getPublicAssetUrl } from '../utils/assets';
 ---
 
-<section class="section-contacto section" id="contacto">
+<section class="section-contacto section" id="contacto" style={`--contact-background: url("${getPublicAssetUrl('assets/black-grid-background-tile.svg')}")`}>
     <h2 class="contacto-title">Contacto</h2>
     <div class="contacto-content">
         <h3>Podés contactarme mediante</h3>
         <div class="contact-cards-container">
-            <ContactCard title="@alezito2008" image="assets/instagram.png" url="https://www.instagram.com/alezito2008/" />
-            <ContactCard title="alejandro.kretzig@gmail.com" image="assets/gmail.png" url="mailto:alejandro.kretzig@gmail.com" />
+            <ContactCard title="@alezito2008" image={getPublicAssetUrl('assets/instagram.png')} url="https://www.instagram.com/alezito2008/" />
+            <ContactCard title="alejandro.kretzig@gmail.com" image={getPublicAssetUrl('assets/gmail.png')} url="mailto:alejandro.kretzig@gmail.com" />
         </div>
     </div>
 </section>
@@ -16,7 +17,7 @@ import ContactCard from "./ContactCard.astro";
 <style>
     .section-contacto {
         background-color: #1E1E1E;
-        background-image: url("assets/black-grid-background-tile.svg");
+        background-image: var(--contact-background);
         background-size: 25px;
         color:#fff;
         position: relative;
